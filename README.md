@@ -37,8 +37,7 @@ LineChart.render()
 
 After pasting the above example code in your `demo.py` file, all you need to do is run the python code and you should see the output as below:
 
-![Markdown Logo]
-(https://github/TunarshBee/sanPlot/public/images/lineChart.png)
+![LineChart.png](/public/images/lineChart.png)
 
 ##  Available Data Visualization and Their Usage.
 The provided documentation defines several visualization for creating different types of plots using sanPlot library in Python. The visualization include:
