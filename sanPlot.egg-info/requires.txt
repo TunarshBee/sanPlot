@@ -1,2 +1,5 @@
 plotly
 matplotlib
+netgraph
+numpy
+circlify

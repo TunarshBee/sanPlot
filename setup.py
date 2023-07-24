@@ -6,5 +6,5 @@ setup(
     description='A data visualization package',
     author='Your Name',
     packages=['sanPlot'],
-    install_requires=['plotly', 'matplotlib']
+    install_requires=['plotly', 'matplotlib','netgraph','numpy','circlify']
 )

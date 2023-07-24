@@ -1,7 +1,13 @@
+README.md
 setup.py
 sanPlot/__init__.py
 sanPlot/bar.py
 sanPlot/charts.py
+sanPlot/circle_packing_chart.py
+sanPlot/line.py
+sanPlot/networkViz.py
+sanPlot/scatter.py
+sanPlot/try.py
 sanPlot.egg-info/PKG-INFO
 sanPlot.egg-info/SOURCES.txt
 sanPlot.egg-info/dependency_links.txt
