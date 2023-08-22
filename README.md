@@ -18,8 +18,38 @@ create a virtual environment in the folder you want to use the package, copy the
 
 > **Note**: Installing the package requires you to be connected to the internet, if not you will be getting an error.
 
-After installing the package, you can go on and create a new python file (_let say `demo.py`_) and paste the below code snippet into the file:
+After installing the package, you can go on and create a new python file (_let say `demo.py`_) and paste any of the below type of chart to see the example usage. You can also customize the chart to your own liking.
 
+
+
+##  Available Data Visualization and Their Usage.
+The provided documentation defines several visualization for creating different types of plots using sanPlot library in Python. The visualization include:
+
+### _**Line**:_ 
+    This visualization creates a line plot with y-axis plotted against the x-axis.
+
+#### `class Line`
+
+**Parameters:**
+- `x_values`: List of x-axis values.
+- `y_values`: List of y-axis values.
+- `title`: Title of the chart (optional).
+- `x_ttl`: Label for the x-axis (optional).
+- `y_ttl`: Label for the y-axis (optional).
+- `color`: Color of the line (optional).
+- `lnStyle`: Line style (optional).
+- `marker`: Marker style (optional).
+- `linewidth`: Width of the line (optional).
+- `label`: Label for the legend (optional).
+- `cmcStyle`: Boolean indicating whether to use CMC style (optional).
+- `graphStyle`: Matplotlib style for the plot (optional).
+- `save`: File path to save the chart image (optional).
+- `grid`: Boolean indicating whether to show grid lines (optional).
+
+**Methods:**
+- `render()`: Renders the line chart with specified settings.
+
+## Example Usage
 ```python
 # import the package
 from sanPlot.charts import Line
@@ -39,15 +69,135 @@ After pasting the above example code in your `demo.py` file, all you need to do 
 
 ![LineChart.png](/public/images/lineChart.png)
 
-##  Available Data Visualization and Their Usage.
-The provided documentation defines several visualization for creating different types of plots using sanPlot library in Python. The visualization include:
 
-### _**Line**:_ 
-    This visualization creates a line plot with y-axis plotted against the x-axis.
+### _**Bar**:_ 
+### Bar Chart
+A customizable class for generating bar charts.
 
-### _**Bar**:_ This visualization creates a bar chart.
+#### `class Bar`
+
+**Parameters:**
+- `x_values`: List of x-axis values.
+- `y_values`: List of y-axis values.
+- `title`: Title of the chart (optional).
+- `x_ttl`: Label for the x-axis (optional).
+- `y_ttl`: Label for the y-axis (optional).
+- `label`: Label for the legend (optional).
+- `graphStyle`: Matplotlib style for the plot (optional).
+- `cmcStyle`: Boolean indicating whether to use CMC style (optional).
+- `color`: Color of the bars (optional).
+- `save`: File path to save the chart image (optional).
+- `alpha`: Transparency of the bars (optional).
+- `width`: Width of the bars (optional).
+- `idxwidth`: Index width for plotting multiple bar charts (optional).
+
+**Methods:**
+- `render()`: Renders the bar chart with specified settings.
+## Example Usage
+
 ### _**Scatter**:_ This visualization creates a scatter plot.
+
+A customizable class for generating scatter plots.
+
+#### `class Scatter`
+
+**Parameters:**
+- `x_values`: List of x-axis values.
+- `y_values`: List of y-axis values.
+- `title`: Title of the chart.
+- `x_ttl`: Label for the x-axis (optional).
+- `y_ttl`: Label for the y-axis (optional).
+- `color`: Color of the markers (optional).
+- `marker`: Marker style (optional).
+- `label`: Label for the legend (optional).
+- `cmcStyle`: Boolean indicating whether to use CMC style (optional).
+- `graphStyle`: Matplotlib style for the plot (optional).
+- `save`: File path to save the chart image (optional).
+- `alpha`: Transparency of markers (optional).
+- `linewidth`: Width of marker edge lines (optional).
+- `cbar`: Color bar label (optional).
+- `cmap`: Colormap for color mapping (optional).
+- `size`: Marker size (optional).
+- `logscalex`: Boolean indicating whether to use log scale for x-axis (optional).
+- `logscaley`: Boolean indicating whether to use log scale for y-axis (optional).
+- `edgcolor`: Edge color of markers (optional).
+
+**Methods:**
+- `render()`: Renders the scatter plot with specified settings.
+## Example Usage
+
 ### _**Pie**:_ This visualization creates a pie chart.
-### _**Doughnut**:_ This visualization creates a doughnut chart.
+### Pie Chart
+A customizable class for generating pie charts.
+
+#### `class Pie`
+
+**Parameters:**
+- `values`: List of values for each slice.
+- `labels`: Labels for each slice (optional).
+- `title`: Title of the chart (optional).
+- `colors`: Colors for each slice (optional).
+- `explode`: Explode values for slices (optional).
+- `save_path`: File path to save the chart image (optional).
+
+**Methods:**
+- `render()`: Renders the pie chart with specified settings.
+## Example Usage
+
 ### _**Circle_paking_chart**:_ This visualization creates a circular packing visualization.
 ### _**NetworkViz**:_ This visualization creates a hierarchical network visualization.
+
+
+# Heatmap 
+
+The `Heatmap` class provides a simple way to create customizable heatmaps using the Matplotlib library in Python. With this class, you can visualize two-dimensional data matrices as colored grids. The class allows you to customize various aspects of the heatmap, such as data, labels, color map, title, and more.
+
+
+### `Heatmap`
+
+The `Heatmap` class is designed to facilitate the creation of customizable heatmaps. It provides the following parameters for customization:
+
+- `data`: A 2D NumPy array representing the data to be visualized as a heatmap.
+- `x_labels`: A list of labels for the x-axis ticks (optional).
+- `y_labels`: A list of labels for the y-axis ticks (optional).
+- `title`: The title of the heatmap (optional).
+- `cmap`: The colormap to be used for coloring the heatmap (default: "viridis").
+- `colorbar`: A boolean indicating whether to display a colorbar (default: False).
+- `save_path`: The file path for saving the heatmap as an image (optional).
+
+### `render()`
+
+The `render()` method generates and displays the heatmap based on the provided parameters. It performs the following actions:
+
+1. Uses Matplotlib to visualize the data as a colored grid.
+2. Optionally adds x-axis and y-axis labels.
+3. Sets the title of the heatmap.
+4. Optionally adds a colorbar for interpreting the colormap.
+5. Optionally saves the heatmap as an image file.
+
+## Example Usage
+
+```python
+from sanPlot.charts import Heatmap
+```
+
+# Create example data and labels
+data = np.random.rand(5, 7)
+x_labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
+y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E", "Category F", "Category G"]
+
+# Initialize a Heatmap instance
+heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True, save_path="heatmap.png")
+
+# Generate and display the heatmap
+heatmap.render()
+```
+
+## Customization
+
+1. Replace `data` with your own 2D data array.
+2. Customize `x_labels` and `y_labels` lists to match your data dimensions.
+3. Modify `title` to set the heatmap title.
+4. Adjust the `cmap` parameter to choose a different colormap from Matplotlib's colormap options.
+5. Set `colorbar` to `True` if you want to display a colorbar.
+6. Provide a `save_path` to save the heatmap as an image.
