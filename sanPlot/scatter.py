@@ -44,7 +44,7 @@ class Scatter:
         self.logscaley = logscaley
 
     def render(self):
-        plt.style.use(self.style) if self.style else plt.style.use("seaborn")
+        plt.style.use(self.style) if self.style else plt.style.use("ggplot")
 
         plt.scatter(
             self.x_values,
@@ -66,3 +66,20 @@ class Scatter:
         plt.savefig(self.save) if self.save else ""
         plt.tight_layout()
         plt.show()
+
+hours_studied = [3, 2, 5, 4, 6, 5, 7, 6, 8, 7]
+exam_scores = [70, 65, 80, 75, 85, 78, 90, 82, 92, 88]
+# Create a Scatter instance and render the scatter plot
+
+scatter_plot = Scatter(
+x_values=hours_studied,
+y_values=exam_scores,
+title='Exam Scores vs. Hours Studied',
+x_ttl='Hours Studied',
+y_ttl='Exam Scores',
+color='red',
+marker='x',
+alpha=0.8,
+save='/public/images/scatter_plot.png'
+)
+scatter_plot.render()

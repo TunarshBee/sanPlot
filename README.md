@@ -94,7 +94,18 @@ A customizable class for generating bar charts.
 **Methods:**
 - `render()`: Renders the bar chart with specified settings.
 ## Example Usage
+```python
+# Sample data
+products = ['Product A', 'Product B', 'Product C', 'Product D']
+sales = [1200, 1800, 900, 1500]
+# Create a Bar instance and render the bar chart
+from express_plotting import Bar
+bar_chart = Bar(products,sales,title='Sales Performance by Product',x_ttl='Products',y_ttl='Sales',color='teal',save='barchart.png')
+bar_chart.render()
+```
+After replacing the above example code in your `demo.py` file, you can run the code again and you should see the output as below:
 
+![BarChart.png](/public/images/barchart.png)
 ### _**Scatter**:_ This visualization creates a scatter plot.
 
 A customizable class for generating scatter plots.
@@ -125,8 +136,30 @@ A customizable class for generating scatter plots.
 **Methods:**
 - `render()`: Renders the scatter plot with specified settings.
 ## Example Usage
+```python
+# Sample data
+hours_studied = [3, 2, 5, 4, 6, 5, 7, 6, 8, 7]exam_scores = [70, 65, 80, 75, 85, 78, 90, 82, 92, 88]
+# Create a Scatter instance and render the scatter plot
+from express_plotting import Scatter
 
-### _**Pie**:_ This visualization creates a pie chart.
+scatter_plot = Scatter(
+x_values=hours_studied,
+y_values=exam_scores,
+title='Exam Scores vs. Hours Studied',
+x_ttl='Hours Studied',
+y_ttl='Exam Scores',
+color='red',
+marker='x',
+alpha=0.8,
+save='/public/images/scatter_plot.png'
+)
+scatter_plot.render()
+```
+After replacing the above example code in your `demo.py` file, you can run the code again and you should see the output as below:
+
+![ScatterPlot.png](/public/images/scatter_plot.png)
+
+
 ### Pie Chart
 A customizable class for generating pie charts.
 
@@ -145,6 +178,41 @@ A customizable class for generating pie charts.
 ## Example Usage
 
 ### _**Circle_paking_chart**:_ This visualization creates a circular packing visualization.
+## Example Usage
+```python
+# Sample data
+data = [
+{
+"id": "World",
+"datum": 6964195249,
+"children": [
+{
+"id": "North America",
+"datum": 450448697,
+"children": [
+{"id": "United States", "datum": 308865000},
+{"id": "Mexico", "datum": 107550697},
+{"id": "Canada", "datum": 34033000},
+],
+},
+{
+"id": "South America",
+"datum": 278095425,
+"children": [
+{"id": "Brazil", "datum": 192612000},
+{"id": "Colombia", "datum": 45349000},
+{"id": "Argentina", "datum": 40134425},
+],
+},# ... Other continents and countries data ...
+],
+}
+]
+# Create a CirclePacking instance and render the circle packing chart
+from express_plotting import CirclePacking
+circle_packing_chart = CirclePacking(data)
+circle_packing_chart.compute_circle_positions()
+circle_packing_chart.plot_network_visualization()
+```
 ### _**NetworkViz**:_ This visualization creates a hierarchical network visualization.
 
 
@@ -179,7 +247,7 @@ The `render()` method generates and displays the heatmap based on the provided p
 
 ```python
 from sanPlot.charts import Heatmap
-```
+
 
 # Create example data and labels
 data = np.random.rand(5, 7)
@@ -187,6 +255,7 @@ x_labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
 y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E", "Category F", "Category G"]
 
 # Initialize a Heatmap instance
+
 heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True, save_path="heatmap.png")
 
 # Generate and display the heatmap

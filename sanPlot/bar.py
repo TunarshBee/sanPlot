@@ -63,3 +63,10 @@ class Bar:
         plt.savefig(self.save) if self.save else ""
         plt.tight_layout()
         plt.show()
+
+
+products = ['Product A', 'Product B', 'Product C', 'Product D']
+sales = [1200, 1800, 900, 1500]
+# Create a Bar instance and render the bar chart
+bar_chart = Bar(products,sales,title='Sales Performance by Product',x_ttl='Products',y_ttl='Sales',color='teal',save='barchart.png')
+bar_chart.render()

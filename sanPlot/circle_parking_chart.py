@@ -108,3 +108,6 @@ class Circle_Packing:
         print("world_population_visualizer = WorldPopulationVisualizer(data)\nworld_population_visualizer.compute_circle_positions()\nworld_population_visualizer.plot_network_visualization()")
         
         # sanPlot/network_plot.py
+circle_packing_chart = Circle_Packing(data)
+circle_packing_chart.compute_circle_positions()
+circle_packing_chart.plot_network_visualization()

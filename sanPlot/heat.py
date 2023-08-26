@@ -44,5 +44,5 @@ class Heatmap:
 data = np.random.rand(5, 7)  # Replace this with your own data
 x_labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
 y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E", "Category F", "Category G"]
-heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True, save_path="heatmap.png")
+heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True)
 heatmap.render()
