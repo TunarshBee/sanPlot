@@ -1,7 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
 
-print(plt.style.available)
 
 class Bar:
     def __init__(
@@ -18,6 +17,8 @@ class Bar:
         save: str = None,
         alpha: int = None,
         width: int = None,
+        logscaley: bool = None,
+        logscalex: bool = None,
         idxwidth: int = None,
     ):
         self.x_values = x_values
@@ -33,6 +34,8 @@ class Bar:
         self.width = width
         self.alpha = alpha
         self.idxwidth = idxwidth
+        self.logscaley = logscaley
+        self.logscalex = logscalex
 
     def render(self):
         plt.style.use(self.style) if self.style else plt.style.use("seaborn")
@@ -58,6 +61,8 @@ class Bar:
         plt.xticks(ticks=x_indexes, labels=self.x_values)
         plt.xlabel(self.x_ttl) if self.x_ttl else ""
         plt.ylabel(self.y_ttl) if self.y_ttl else ""
+        plt.xscale("log") if self.logscalex else None
+        plt.yscale("log") if self.logscaley else None
         plt.title(self.title) if self.title else ""
         plt.legend(loc="upper left") if self.label else ""
         plt.savefig(self.save) if self.save else ""
@@ -65,8 +70,8 @@ class Bar:
         plt.show()
 
 
-products = ['Product A', 'Product B', 'Product C', 'Product D']
-sales = [1200, 1800, 900, 1500]
-# Create a Bar instance and render the bar chart
-bar_chart = Bar(products,sales,title='Sales Performance by Product',x_ttl='Products',y_ttl='Sales',color='teal',save='barchart.png')
-bar_chart.render()
+# products = ['Product A', 'Product B', 'Product C', 'Product D']
+# sales = [1200, 1800, 900, 1500]
+# # Create a Bar instance and render the bar chart
+# bar_chart = Bar(products,sales,title='Sales Performance by Product',x_ttl='Products',y_ttl='Sales',color='teal',save='barchart.png')
+# bar_chart.render()

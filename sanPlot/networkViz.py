@@ -1,22 +1,25 @@
+# sanPlot/network_plot.py
 import matplotlib.pyplot as plt
 import networkx as nx
 from netgraph import Graph
 
 class NetworkChart:
-    def __init__(self, nodes, edges, color_map, node_color_mapping):
+    def __init__(self, nodes, edges, color, nodes_to_color):
         self.nodes = nodes
         self.edges = edges
-        self.color_map = color_map
-        self.node_color_mapping = node_color_mapping
-        self.generate_node_colors()
+        self.color = color
+        self.node_to_color = nodes_to_color
 
     def generate_node_colors(self):
-        self.node_color = [self.color_map[self.node_color_mapping[node["id"]]] for node in self.nodes]
+        self.node_color = {
+            node: self.color[community_id]
+            for node, community_id in self.node_to_color.items()
+        }
 
     def plot(self):
         g = nx.Graph()
-        g.add_nodes_from(node["id"] for node in self.nodes)
-        g.add_edges_from((edge["from"], edge["to"]) for edge in self.edges)
+        g.add_nodes_from(self.nodes)
+        g.add_edges_from(self.edges)
 
         fig, ax = plt.subplots()
 
@@ -26,43 +29,20 @@ class NetworkChart:
             node_edge_width=0,
             edge_width=1,
             edge_alpha=1,
+            node_layout_kwargs=dict(node_to_community=self.node_to_color),
+            node_layout="community",
+            edge_layout="bundled",
             ax=ax,
         )
         plt.show()
 
-# Sample data representing relationships between entities
-nodes = [
-    {"id": 1, "label": "Entity 1"},
-    {"id": 2, "label": "Entity 2"},
-    {"id": 3, "label": "Entity 3"},
-    {"id": 4, "label": "Entity 4"},
-    {"id": 5, "label": "Entity 5"}
-]
-
-edges = [
-    {"from": 1, "to": 2},
-    {"from": 1, "to": 3},
-    {"from": 2, "to": 3},
-    {"from": 4, "to": 5},
-    {"from": 4, "to": 1},
-    {"from": 5, "to": 3}
-]
-
-# Define colors and node-to-color mapping
-color_map = {
-    0: "red",
-    1: "blue",
-    2: "green"
-}
-
-node_color_mapping = {
-    1: 0,
-    2: 1,
-    3: 1,
-    4: 2,
-    5: 2
-}
+nodes = [1, 2, 3, 4, 5, 6]
+edges = [(1, 2), (1, 3), (2, 3), (4, 5), (5, 6)]
+color = ["red", "blue", ]
+nodes_to_color = {1: 0, 2: 1, 3: 1, 4: 0, 5: 0, 6: 1}
 
 # Create a NetworkChart instance and render the network visualization
-network_viz = NetworkChart(nodes, edges, color_map, node_color_mapping)
-network_viz.plot()
+network_chart = NetworkChart(nodes, edges, color, nodes_to_color)
+network_chart.generate_node_colors()  # Generate node colors based on community mapping
+network_chart.plot()
+

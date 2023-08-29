@@ -31,13 +31,13 @@ class Pie:
 
 
 
-# Example usage for DoughnutChart
-values = [30, 20, 25, 15, 10]
-labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
-colors = ["#FF9999", "#66B2FF", "#99FF99", "#FFCC99", "#C2C2f2"]
-explode = (0.1, 0, 0, 0, 0)  # Explode the first slice
+# # Example usage for DoughnutChart
+# values = [30, 20, 25, 15, 10]
+# labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
+# colors = ["#FF9999", "#66B2FF", "#99FF99", "#FFCC99", "#C2C2f2"]
+# explode = (0.1, 0, 0, 0, 0)  # Explode the first slice
 
 
-# Example usage for PieChart (inherits from DoughnutChart)
-pie_chart = Pie(values, labels=labels, title="Pie Chart Example", colors=colors, explode=explode, save_path="pie_chart.png")
-pie_chart.render()
+# # Example usage for PieChart (inherits from DoughnutChart)
+# pie_chart = Pie(values, labels=labels, title="Pie Chart Example", colors=colors, explode=explode, save_path="pie_chart.png")
+# pie_chart.render()

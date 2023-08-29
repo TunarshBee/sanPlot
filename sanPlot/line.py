@@ -12,6 +12,8 @@ class Line:
         marker: str = None,
         linewidth: str = None,
         label: str = None,
+        logscaley: bool = None,
+        logscalex: bool = None,
         cmcStyle: bool = None,
         graphStyle: str = None,
         save: str = None,
@@ -31,6 +33,8 @@ class Line:
         self.lnStyle = lnStyle
         self.save = save
         self.grid = grid
+        self.logscaley = logscaley
+        self.logscalex = logscalex
 
     def render(self):
         plt.style.use(self.style) if self.style else plt.style.use("seaborn")
@@ -45,6 +49,8 @@ class Line:
         )
         plt.xlabel(self.x_ttl) if self.x_ttl else ""
         plt.ylabel(self.y_ttl) if self.y_ttl else ""
+        plt.xscale("log") if self.logscalex else None
+        plt.yscale("log") if self.logscaley else None
         plt.title(self.title) if self.title else ""
         plt.legend(loc="upper left") if self.label else ""
         plt.savefig(self.save) if self.save else ""

@@ -10,7 +10,9 @@ class Heatmap:
         title=None,
         cmap=None,
         colorbar=False,
-        save_path=None,
+        save=None,
+        logscaley: bool = None,
+        logscalex: bool = None,
     ):
         self.data = data
         self.x_labels = x_labels
@@ -18,7 +20,9 @@ class Heatmap:
         self.title = title
         self.cmap = cmap if cmap else "viridis"
         self.colorbar = colorbar
-        self.save_path = save_path
+        self.save_path = save
+        self.logscaley = logscaley
+        self.logscalex = logscalex
 
     def render(self):
         plt.imshow(self.data, cmap=self.cmap, aspect="auto")
@@ -32,6 +36,8 @@ class Heatmap:
         
         plt.xlabel("X Axis Label")
         plt.ylabel("Y Axis Label")
+        plt.xscale("log") if self.logscalex else None
+        plt.yscale("log") if self.logscaley else None
         plt.title(self.title)
         
         if self.save_path:
@@ -40,9 +46,9 @@ class Heatmap:
         plt.tight_layout()
         plt.show()
 
-# Example usage
-data = np.random.rand(5, 7)  # Replace this with your own data
-x_labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
-y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E", "Category F", "Category G"]
-heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True)
-heatmap.render()
+# # Example usage
+# data = np.random.rand(5, 7)  # Replace this with your own data
+# x_labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
+# y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E", "Category F", "Category G"]
+# heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True)
+# heatmap.render()
