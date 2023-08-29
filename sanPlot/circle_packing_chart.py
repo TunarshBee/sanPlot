@@ -2,8 +2,6 @@ import circlify
 import matplotlib.pyplot as plt
 
 
-
-
 class Circle_Packing:
     
     def __init__(self, data):
@@ -17,7 +15,7 @@ class Circle_Packing:
             target_enclosure=circlify.Circle(x=0, y=0, r=1)
         )
 
-    def plot_network_visualization(self):
+    def render(self):
         fig, ax = plt.subplots(figsize=(10, 19))
         ax.set_title('Repartition of the world population')
         ax.axis('off')
@@ -53,5 +51,5 @@ class Circle_Packing:
         plt.show()
     def docs(self):
         print(data)
-        print("world_population_visualizer = WorldPopulationVisualizer(data)\nworld_population_visualizer.compute_circle_positions()\nworld_population_visualizer.plot_network_visualization()")
+        print("world_population_visualizer = WorldPopulationVisualizer(data)\nworld_population_visualizer.compute_circle_positions()\nworld_population_visualizer.render()")
         

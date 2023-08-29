@@ -295,10 +295,10 @@ class Circle_Packing:
         print("world_population_visualizer = WorldPopulationVisualizer(data)\nworld_population_visualizer.compute_circle_positions()\nworld_population_visualizer.plot_network_visualization()")
         
         # sanPlot/network_plot.py
+# sanPlot/network_plot.py
 import matplotlib.pyplot as plt
 import networkx as nx
 from netgraph import Graph
-
 
 class NetworkChart:
     def __init__(self, nodes, edges, color, nodes_to_color):
@@ -313,7 +313,7 @@ class NetworkChart:
             for node, community_id in self.node_to_color.items()
         }
 
-    def plot(self):
+    def render(self):
         g = nx.Graph()
         g.add_nodes_from(self.nodes)
         g.add_edges_from(self.edges)
@@ -337,6 +337,9 @@ class NetworkChart:
 
 
 
+
+
+
 #sanPlot/charts.py
 import matplotlib.pyplot as plt
 
@@ -355,18 +358,4 @@ class Pie:
     def render(self):
         plt.pie(self.sizes, labels=self.labels)
         plt.title(self.title)
-        plt.show()
-
-
-class Doughnut:
-    def __init__(self, labels, sizes, title):
-        self.labels = labels
-        self.sizes = sizes
-        self.title = title
-
-    def render(self):
-        fig, ax = plt.subplots()
-        ax.pie(self.sizes, labels=self.labels)
-        ax.axis("equal")  # Equal aspect ratio ensures a circular pie
-        ax.set_title(self.title)
         plt.show()

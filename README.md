@@ -176,8 +176,24 @@ A customizable class for generating pie charts.
 **Methods:**
 - `render()`: Renders the pie chart with specified settings.
 ## Example Usage
+```python
+values = [30, 20, 25, 15, 10]
+labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
+colors = ["#FF9999", "#66B2FF", "#99FF99", "#FFCC99", "#C2C2f2"]
+explode = (0.1, 0, 0, 0, 0)  # Explode the first slice
 
-### _**Circle_paking_chart**:_ This visualization creates a circular packing visualization.
+
+# Example usage for PieChart (inherits from DoughnutChart)
+pie_chart = Pie(values, labels=labels, title="Pie Chart Example", colors=colors, explode=explode, save_path="pie_chart.png")
+pie_chart.render()
+```
+
+After replacing the above example code in your `demo.py` file, you can run the code again and you should see the output as below:
+
+![Pie Chart.png](/public/images/pie_chart.png)
+
+## _**Circle_paking_chart**:_ 
+#### This visualization creates a circular packing visualization.
 ## Example Usage
 ```python
 # Sample data
@@ -213,6 +229,10 @@ circle_packing_chart = CirclePacking(data)
 circle_packing_chart.compute_circle_positions()
 circle_packing_chart.plot_network_visualization()
 ```
+
+After replacing the above example code in your `demo.py` file, you can run the code again and you should see the output as below:
+
+![Circle Packing Chart.png](/public/images/circle_packing.png)
 ### _**NetworkViz**:_ This visualization creates a hierarchical network visualization.
 
 
@@ -261,6 +281,9 @@ heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heat
 # Generate and display the heatmap
 heatmap.render()
 ```
+After replacing the above example code in your `demo.py` file, you can run the code again and you should see the output as below:
+
+![Heat Map.png](/public/images/heatmap.png)
 
 ## Customization
 

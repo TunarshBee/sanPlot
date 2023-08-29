@@ -16,7 +16,7 @@ class NetworkChart:
             for node, community_id in self.node_to_color.items()
         }
 
-    def plot(self):
+    def render(self):
         g = nx.Graph()
         g.add_nodes_from(self.nodes)
         g.add_edges_from(self.edges)
@@ -36,13 +36,5 @@ class NetworkChart:
         )
         plt.show()
 
-nodes = [1, 2, 3, 4, 5, 6]
-edges = [(1, 2), (1, 3), (2, 3), (4, 5), (5, 6)]
-color = ["red", "blue", ]
-nodes_to_color = {1: 0, 2: 1, 3: 1, 4: 0, 5: 0, 6: 1}
 
-# Create a NetworkChart instance and render the network visualization
-network_chart = NetworkChart(nodes, edges, color, nodes_to_color)
-network_chart.generate_node_colors()  # Generate node colors based on community mapping
-network_chart.plot()
 
