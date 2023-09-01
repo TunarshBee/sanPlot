@@ -45,7 +45,7 @@ class Line:
             color=self.color,
             label=self.label,
             marker=self.marker,
-            linestyle=self.lnstyle if self.lnStyle else None,
+            linestyle=self.lnStyle if self.lnStyle else None,
         )
         plt.xlabel(self.x_ttl) if self.x_ttl else ""
         plt.ylabel(self.y_ttl) if self.y_ttl else ""
