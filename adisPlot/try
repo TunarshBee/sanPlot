@@ -294,8 +294,8 @@ class Circle_Packing:
         print(data)
         print("world_population_visualizer = WorldPopulationVisualizer(data)\nworld_population_visualizer.compute_circle_positions()\nworld_population_visualizer.plot_network_visualization()")
         
-        # sanPlot/network_plot.py
-# sanPlot/network_plot.py
+        # adisPlot/network_plot.py
+# adisPlot/network_plot.py
 import matplotlib.pyplot as plt
 import networkx as nx
 from netgraph import Graph
@@ -340,7 +340,7 @@ class NetworkChart:
 
 
 
-#sanPlot/charts.py
+#adisPlot/charts.py
 import matplotlib.pyplot as plt
 
 from .bar import Bar

@@ -1,4 +1,4 @@
-# **SanPlot.**
+# **adisPlot.**
 A python library that enhance the efficiency and effectiveness of data visualization. The package enables data scientists to visualize and deliver insights quickly, robustly, and in a clear and visually appealing manner.
 
 #   Getting Started
@@ -9,7 +9,7 @@ Make sure you have `python` programming language and updated `pip` package manan
 
 After downloading the package successfully, you can either install the package globally by openning your **Download** folder and running the below command in your command prompt:
 ```python
-pip install sanPlot-1.0.tar.gz
+pip install adisPlot-1.0.tar.gz
 ```
 
  **_OR_** 
@@ -23,7 +23,7 @@ After installing the package, you can go on and create a new python file (_let s
 
 
 ##  Available Data Visualization and Their Usage.
-The provided documentation defines several visualization for creating different types of plots using sanPlot library in Python. The visualization include:
+The provided documentation defines several visualization for creating different types of plots using adisPlot library in Python. The visualization include:
 
 ### _**Line**:_ 
     This visualization creates a line plot with y-axis plotted against the x-axis.
@@ -52,7 +52,7 @@ The provided documentation defines several visualization for creating different 
 ## Example Usage
 ```python
 # import the package
-from sanPlot.charts import Line
+from adisPlot.charts import Line
 
 # creating variables for plotting y against x axis
 x = [5, 2, 6, 3, 4, 6, 7, 4, 8,1, 2, 3, 4, 5, 5, 7, 4, 7,1, 2, 3, 4, 5, 5, 7, 4, 7]
@@ -266,7 +266,7 @@ The `render()` method generates and displays the heatmap based on the provided p
 ## Example Usage
 
 ```python
-from sanPlot.charts import Heatmap
+from adisPlot.charts import Heatmap
 
 
 # Create example data and labels

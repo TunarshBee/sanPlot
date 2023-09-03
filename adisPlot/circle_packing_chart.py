@@ -50,5 +50,6 @@ class Circle_Packing:
 
         plt.show()
     def docs(self):
+        print(data)
         print("world_population_visualizer = WorldPopulationVisualizer(data)\nworld_population_visualizer.compute_circle_positions()\nworld_population_visualizer.render()")
         

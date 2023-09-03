@@ -1,4 +1,4 @@
-# sanPlot/network_plot.py
+# adisPlot/network_plot.py
 import matplotlib.pyplot as plt
 import networkx as nx
 from netgraph import Graph
