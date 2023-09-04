@@ -3,9 +3,9 @@ A python library that enhance the efficiency and effectiveness of data visualiza
 
 #   Getting Started
 ###  With Python and Pip
-Make sure you have `python` programming language and updated `pip` package mananger. With the stated conditions being met, continue down below for get started.
+Make sure you have `vscode` (or any other text editor), `python` programming language and updated `pip` package mananger installed on your local machine. With the stated conditions being met, continue down below for get started. You might want to install packages like `pandas` to extract data.
 
-##  [Download the package](https://github.com/)
+##  [Download the package](https://github.com/TunarshBee/sanPlot/dist/adisPlot-1.0.tar.gz)
 
 After downloading the package successfully, you can either install the package globally by openning your **Download** folder and running the below command in your command prompt:
 ```python
@@ -227,7 +227,7 @@ data = [
 from express_plotting import CirclePacking
 circle_packing_chart = CirclePacking(data)
 circle_packing_chart.compute_circle_positions()
-circle_packing_chart.plot_network_visualization()
+circle_packing_chart.render()
 ```
 
 After replacing the above example code in your `demo.py` file, you can run the code again and you should see the output as below:
