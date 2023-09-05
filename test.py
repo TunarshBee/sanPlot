@@ -1,4 +1,5 @@
-from adisPlot.charts import Bar, Line,Scatter, Circle_Packing, NetworkChart, Pie
+from adisPlot.charts import Bar, Line,Scatter, Circle_Packing, NetworkChart, Pie , Heatmap
+import numpy as np
 
 # Test for Bar chart
 def test_bar_chart():
@@ -145,10 +146,26 @@ def test_pie_chart():
     
     pie_chart = Pie(
         labels=labels,
-        sizes=sizes,
+        values=sizes,
         title="Pie Chart Example"
     )
     pie_chart.render()
+
+# Test for Heat Map
+def test_heat_map():
+
+    # Create example data and labels
+    data = np.random.rand(5, 7)
+    x_labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"]
+    y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E", "Category F", "Category G"]
+
+    # Initialize a Heatmap instance
+
+    heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True, save="heatmap.png")
+
+    # Generate and display the heatmap
+    heatmap.render()
+
 
 # Run the tests
 if __name__ == "__main__":
@@ -158,7 +175,7 @@ if __name__ == "__main__":
     test_circle_packing_chart()
     test_network_chart()
     test_pie_chart()
-
+    test_heat_map()
 
 
 

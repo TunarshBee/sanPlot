@@ -267,7 +267,7 @@ The `render()` method generates and displays the heatmap based on the provided p
 
 ```python
 from adisPlot.charts import Heatmap
-
+import numpy as np
 
 # Create example data and labels
 data = np.random.rand(5, 7)
@@ -276,7 +276,7 @@ y_labels = ["Category A", "Category B", "Category C", "Category D", "Category E"
 
 # Initialize a Heatmap instance
 
-heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True, save_path="heatmap.png")
+heatmap = Heatmap(data, x_labels=x_labels, y_labels=y_labels, title="Custom Heatmap Example", cmap="YlOrRd", colorbar=True, save="heatmap.png")
 
 # Generate and display the heatmap
 heatmap.render()

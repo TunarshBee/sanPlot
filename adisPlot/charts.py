@@ -5,5 +5,6 @@ from .networkViz import NetworkChart
 from .line import Line
 from .circle_packing_chart import Circle_Packing
 from .scatter import Scatter
+from .heat import Heatmap
 
 
