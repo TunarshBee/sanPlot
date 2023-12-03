@@ -1,4 +1,4 @@
-from adisPlot.charts import Bar
+from sanPlot.charts import Bar
 import pandas as pd
 
 data =  pd.read_csv("rental-price-indexes-jan-2022(1.5 years).csv")

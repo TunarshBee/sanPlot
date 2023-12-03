@@ -1,5 +1,5 @@
-# from adisPlot.charts import 
-from adisPlot.charts import Circle_Packing
+# from sanPlot.charts import 
+from sanPlot.charts import Circle_Packing
 data = [
     {
         "id": "World",
@@ -54,7 +54,7 @@ data = [
     }
 ]
 
-#         # adisPlot/network_plot.py
+#         # sanPlot/network_plot.py
 circle_packing_chart = Circle_Packing(data)
 circle_packing_chart.compute_circle_positions()
 circle_packing_chart.plot_network_visualization()

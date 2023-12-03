@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name='adisPlot',
+    name='sanPlot',
     version='1.0',
     description='A data visualization package',
     author='Your Name',
-    packages=['adisPlot'],
+    packages=['sanPlot'],
     install_requires=['plotly', 'matplotlib','netgraph','networkx','numpy','circlify']
 )
